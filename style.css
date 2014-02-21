@@ -1,0 +1,49 @@
+.rating {
+    background: url('unchecked-star.jpg');
+    background-size: contain;
+    font-size: 0;
+    white-space: nowrap;
+    display: inline-block;
+    width: 90px;
+    height: 17px;
+    overflow: hidden;
+    position: relative;
+}
+.rating span {
+    background: url('checked-star.jpg');
+    background-size: contain;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+}
+.rating input {
+    opacity: 0;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+}
+
+.rating input:hover + span,
+.rating input:checked + span {
+    opacity: 1;
+}
+.rating span ~ span {
+    width: 40%;
+}
+.rating span ~ span ~ span {
+    width: 60%;
+}
+.rating span ~ span ~ span ~ span {
+    width: 80%;
+}
+.rating span ~ span ~ span ~ span ~ span {
+    width: 100%;
+}
